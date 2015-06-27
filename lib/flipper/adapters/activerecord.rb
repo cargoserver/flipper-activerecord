@@ -90,7 +90,7 @@ module Flipper
         when :set
           g = gate_join( feature )
           opts = { name:  gate.key.to_s, value: thing.value.to_s }
-          g = g.where(opts).first || g.new!(opts)
+          g = g.where(opts).first || g.new(opts)
           unless g.persisted?
             g.feature = feature_id( feature )
           end
@@ -126,14 +126,14 @@ module Flipper
 
         true
       end
-      
+
       # Private
       def feature_id( feature )
         opts = { name: feature.key }
         i = Flipper::ActiveRecord::Feature.select(:id)
         i.where(opts).first || i.create!(opts)
       end
-      
+
       # Private
       def gate_join( feature )
         Flipper::ActiveRecord::Gate.joins(:feature).where( flipper_features: {name: feature.key} ).readonly(false)
