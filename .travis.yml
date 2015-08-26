@@ -1,0 +1,5 @@
+addons:
+  postgresql: "9.3"
+
+before_script:
+  - psql -c 'create database flipper_activerecord_test;' -U postgres
