@@ -1,3 +1,7 @@
+# This is necessary because if you don't include foreigner in your
+# gemfile it won't load during a migration, for some reason.
+require 'foreigner'; Foreigner.load
+
 class CreateFlipperTables < ActiveRecord::Migration
   def self.up
     create_table :flipper_features do |t|

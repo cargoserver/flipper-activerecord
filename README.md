@@ -159,7 +159,7 @@ pp adapter.get(flipper[:stats])
 ## Testing
 
 ```
-dbcreate flipper_activerecord_test
+createdb flipper_activerecord_test
 rspec
 ```
 
