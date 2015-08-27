@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name          = "flipper-activerecord3dot2"
-  gem.version       = "0.1.1"
+  gem.version       = "0.1.2"
   gem.authors       = ["Jesse Proudman", "Blake Gentry"]
   gem.email         = ["jproudman@bluebox.net", "blakesgentry@gmail.com"]
   gem.description   = %q{ActiveRecord 3.2 adapter for Flipper}
